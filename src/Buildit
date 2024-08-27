@@ -1,0 +1,103 @@
+#!/bin/sh
+ 
+usage()
+{
+	echo "1. build 32bit program ./Buildit i386[target in i386]"	
+	echo "2. build 64bit program ./Buildit x64[target in x64]"	
+	echo "3. build debug program ./Buildit debug[target in Debug]"	
+	echo "4. build hisiv100 program ./Buildit hisiv100[target in hisiv100]"
+	echo "5. build hisiv200 program ./Buildit hisiv200[target in hisiv200]"
+	echo "6. build hisiv400 program ./Buildit hisiv400[target in hisiv400]"
+	echo "7. build Android program ./Buildit android[target in Android]"
+	echo "8. build hisiv300 program ./Buildit hivis300[target in hisiv300]"
+	echo "9. build 32bit shared lib ./Buildit i386_shared[target in i386_shared]"    
+    echo "10. build 64bit shared lib ./Buildit x64_shared[target in x64_shared]"
+	echo "11. build hisiv100 shared lib ./Buildit hisiv100_shared[target in hisiv100_shared]"
+    echo "12. build hisiv200 shared lib ./Buildit hisiv200_shared[target in hisiv200_shared]"
+	echo "13. build hisiv300 shared lib ./Buildit hisiv300_shared[target in hisiv300_shared]"
+	echo "14. build hisiv400 shared lib ./Buildit hisiv400_shared[target in hisiv400_shared]"
+	echo "15. build hisiv500 program ./Buildit hisiv500[target in hisiv500]"
+	echo "16. build hisiv600 program ./Buildit hisiv600[target in hisiv600]"
+	echo "17. build hisiv500 shared lib ./Buildit hisiv500_shared[target in hisiv500_shared]"
+	echo "18. build hisiv600 shared lib ./Buildit hisiv600_shared[target in hisiv600_shared]"
+	echo "19. build mipsel_openwrt shared lib ./Buildit openwrt_shared[target in mipsel_openwrt_shared]"
+}
+ 
+if [ "$*" = "clean" ] ; then
+    	make -f nbproject/Makefile-i386.mk QMAKE= SUBPROJECTS= .clean-conf	
+	make -f nbproject/Makefile-x64.mk QMAKE= SUBPROJECTS= .clean-conf
+	make -f nbproject/Makefile-i386_shared.mk QMAKE= SUBPROJECTS= .clean-conf	
+	make -f nbproject/Makefile-x64_shared.mk QMAKE= SUBPROJECTS= .clean-conf
+	make -f nbproject/Makefile-hisiv100.mk QMAKE= SUBPROJECTS= .clean-conf
+	make -f nbproject/Makefile-hisiv200.mk QMAKE= SUBPROJECTS= .clean-conf
+	make -f nbproject/Makefile-hisiv300.mk QMAKE= SUBPROJECTS= .clean-conf
+	make -f nbproject/Makefile-hisiv400.mk QMAKE= SUBPROJECTS= .clean-conf
+	make -f nbproject/Makefile-hisiv500.mk QMAKE= SUBPROJECTS= .clean-conf
+	make -f nbproject/Makefile-hisiv600.mk QMAKE= SUBPROJECTS= .clean-conf
+	make -f nbproject/Makefile-hisiv100_shared.mk QMAKE= SUBPROJECTS= .clean-conf
+	make -f nbproject/Makefile-hisiv200_shared.mk QMAKE= SUBPROJECTS= .clean-conf
+	make -f nbproject/Makefile-hisiv300_shared.mk QMAKE= SUBPROJECTS= .clean-conf
+	make -f nbproject/Makefile-hisiv400_shared.mk QMAKE= SUBPROJECTS= .clean-conf
+	make -f nbproject/Makefile-hisiv500_shared.mk QMAKE= SUBPROJECTS= .clean-conf
+	make -f nbproject/Makefile-hisiv600_shared.mk QMAKE= SUBPROJECTS= .clean-conf
+	make -f nbproject/Makefile-Debug.mk QMAKE= SUBPROJECTS= .clean-conf
+	make -f nbproject/Makefile-Android.mk QMAKE= SUBPROJECTS= .clean-conf
+	make -f nbproject/Makefile-mipsel_openwrt_shared.mk QMAKE= SUBPROJECTS= .clean-conf
+	make -f nbproject/Makefile-zgwl_arm.mk QMAKE= SUBPROJECTS= .clean-conf
+	make -f nbproject/Makefile-zgwl_mips_shared.mk QMAKE= SUBPROJECTS= .clean-conf
+elif [ "$*" = "hisiv100" ]; then
+    make -f nbproject/Makefile-hisiv100.mk QMAKE= SUBPROJECTS= .build-conf
+elif [ "$*" = "zgwl_arm" ]; then
+    make -f nbproject/Makefile-zgwl_arm.mk QMAKE= SUBPROJECTS= .build-conf
+elif [ "$*" = "hisiv200" ] ; then
+    make -f nbproject/Makefile-hisiv200.mk QMAKE= SUBPROJECTS= .build-conf
+elif [ "$*" = "hisiv300" ] ; then
+    make -f nbproject/Makefile-hisiv300.mk QMAKE= SUBPROJECTS= .build-conf
+elif [ "$*" = "hisiv400" ] ; then
+    make -f nbproject/Makefile-hisiv400.mk QMAKE= SUBPROJECTS= .build-conf
+elif [ "$*" = "hisiv500" ] ; then
+    make -f nbproject/Makefile-hisiv500.mk QMAKE= SUBPROJECTS= .build-conf
+elif [ "$*" = "hisiv600" ] ; then
+    make -f nbproject/Makefile-hisiv600.mk QMAKE= SUBPROJECTS= .build-conf
+elif [ "$*" = "hisiv100_shared" ] ; then
+    make -f nbproject/Makefile-hisiv100_shared.mk QMAKE= SUBPROJECTS= .build-conf
+elif [ "$*" = "hisiv200_shared" ] ; then
+    make -f nbproject/Makefile-hisiv200_shared.mk QMAKE= SUBPROJECTS= .build-conf
+elif [ "$*" = "hisiv300_shared" ] ; then
+    make -f nbproject/Makefile-hisiv300_shared.mk QMAKE= SUBPROJECTS= .build-conf
+elif [ "$*" = "hisiv400_shared" ] ; then
+    make -f nbproject/Makefile-hisiv400_shared.mk QMAKE= SUBPROJECTS= .build-conf
+elif [ "$*" = "hisiv500_shared" ] ; then
+    make -f nbproject/Makefile-hisiv500_shared.mk QMAKE= SUBPROJECTS= .build-conf
+elif [ "$*" = "hisiv600_shared" ] ; then
+    make -f nbproject/Makefile-hisiv600_shared.mk QMAKE= SUBPROJECTS= .build-conf
+elif [ "$*" = "x64" ] ; then
+    make -f nbproject/Makefile-x64.mk QMAKE= SUBPROJECTS= .build-conf
+elif [ "$*" = "x64_shared" ] ; then
+    make -f nbproject/Makefile-x64_shared.mk QMAKE= SUBPROJECTS= .build-conf
+elif [ "$*" = "debug" ] ; then
+    make -f nbproject/Makefile-Debug.mk QMAKE= SUBPROJECTS= .build-conf
+elif [ "$*" = "i386" ] ; then
+    make -f nbproject/Makefile-i386.mk QMAKE= SUBPROJECTS= .build-conf
+elif [ "$*" = "i386_shared" ] ; then
+    make -f nbproject/Makefile-i386_shared.mk QMAKE= SUBPROJECTS= .build-conf
+elif [ "$*" = "android" ] ; then
+    make -f nbproject/Makefile-Android.mk QMAKE= SUBPROJECTS= .clean-conf
+    make -f nbproject/Makefile-Android.mk QMAKE= SUBPROJECTS= .build-conf ABI=arm
+    make -f nbproject/Makefile-Android.mk QMAKE= SUBPROJECTS= .clean-conf
+    make -f nbproject/Makefile-Android.mk QMAKE= SUBPROJECTS= .build-conf ABI=arm64
+    make -f nbproject/Makefile-Android.mk QMAKE= SUBPROJECTS= .clean-conf
+    make -f nbproject/Makefile-Android.mk QMAKE= SUBPROJECTS= .build-conf ABI=x86
+    make -f nbproject/Makefile-Android.mk QMAKE= SUBPROJECTS= .clean-conf
+    make -f nbproject/Makefile-Android.mk QMAKE= SUBPROJECTS= .build-conf ABI=x86_64
+    make -f nbproject/Makefile-Android.mk QMAKE= SUBPROJECTS= .clean-conf
+    make -f nbproject/Makefile-Android.mk QMAKE= SUBPROJECTS= .build-conf ABI=mips
+    make -f nbproject/Makefile-Android.mk QMAKE= SUBPROJECTS= .clean-conf
+    make -f nbproject/Makefile-Android.mk QMAKE= SUBPROJECTS= .build-conf ABI=mips64
+elif [ "$*" = "openwrt_shared" ] ; then
+    make -f nbproject/Makefile-mipsel_openwrt_shared.mk QMAKE= SUBPROJECTS= .build-conf
+elif [ "$*" = "zgwl_mips_shared" ] ; then
+    make -f nbproject/Makefile-zgwl_mips_shared.mk QMAKE= SUBPROJECTS= .build-conf
+else 
+	usage;
+fi
