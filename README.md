@@ -55,6 +55,7 @@ EASY\_SDK\_AUDIO\_FRAME\_FLAG数据可支持多种音频格式：
 
 `./demo/`目录中有EasyRTSPServer的调用示例，其主要功能是通过RTSP拉流的方式将外部实时流输入给EasyRTSPServer，进行多路的RTSP流分发输出，作用等同于NVR的作用；
 
+`./simulator/`目录中，用EasyRTSPServer+EasyStreamClient做了一个IPC的RTSP模拟器，支持从视频文件源或者视频网络源读取音视频数据，标准化输出RTSP音视频实时流；
 
 
 ## 更多流媒体音视频资源
